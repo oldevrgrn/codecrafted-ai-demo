@@ -6,7 +6,7 @@ import { ArrowLeft, Clock, DollarSign, RotateCcw } from "lucide-react";
 import { voicemailSamples, buildDispatchTicket, type DispatchTicket } from "@/lib/voicemailData";
 
 const urgencyStyles: Record<DispatchTicket["urgency"], string> = {
-  High: "bg-red-950/40 border-red-900/40 text-red-300",
+  High: "bg-primary/15 border-primary/40 text-primary",
   Medium: "bg-amber-950/40 border-amber-900/40 text-amber-300",
   Low: "bg-emerald-950/40 border-emerald-900/40 text-emerald-300",
 };
