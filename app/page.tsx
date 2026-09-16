@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Zap, ArrowRight } from "lucide-react";
+import { Zap, ArrowRight, Clock, DollarSign, TrendingUp } from "lucide-react";
+import { site } from "@/lib/site";
 
 const demos = [
   {
@@ -46,19 +47,43 @@ const demos = [
   },
 ];
 
+const valueProps = [
+  {
+    icon: Clock,
+    color: "text-blue-400 bg-blue-950/40 border-blue-900/40",
+    title: "Time Reclaimed",
+    body: "10–20+ hours back in your week — no more late nights writing quotes, chasing voicemails, or answering the same three questions on the phone.",
+  },
+  {
+    icon: DollarSign,
+    color: "text-emerald-400 bg-emerald-950/40 border-emerald-900/40",
+    title: "Revenue Protected",
+    body: "A single HVAC replacement, roof, or legal case can run $3,000–$25,000+. The first business to respond usually wins the job — these systems make sure that's you.",
+  },
+  {
+    icon: TrendingUp,
+    color: "text-amber-400 bg-amber-950/40 border-amber-900/40",
+    title: "Revenue Captured",
+    body: "Recovering just one lost lead or cold quote a month typically covers this entire service. Everything after that is pure upside — and it keeps compounding.",
+  },
+];
+
 export default function HomePage() {
   return (
     <div className="max-w-lg mx-auto px-4 pt-8 pb-4">
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
           <Zap className="w-4 h-4" />
-          Live AI Demos
+          Done-With-You AI Automation
         </div>
         <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 leading-tight">
           See AI Save Your Business <span className="text-primary">20+ Hours</span> a Week
         </h1>
-        <p className="text-muted-foreground text-base">
-          Live demos tailored for local Southern Utah businesses
+        <p className="text-muted-foreground text-base leading-relaxed">
+          {site.name} builds and manages custom AI systems for Southern Utah trades, law, and
+          service businesses — so you stop losing leads to slow callbacks, buried quotes, and
+          unanswered reviews. We set it up and run it with you, week after week, for a flat
+          monthly rate. No agency retainer, no dev team, no guesswork.
         </p>
       </div>
 
@@ -87,10 +112,59 @@ export default function HomePage() {
         ))}
       </div>
 
-      <div className="mt-8 text-center">
+      <div className="mt-6 mb-10 text-center">
         <p className="text-xs text-muted-foreground">
           Tap any demo above to see <span className="text-primary font-medium">the automation</span> in action
         </p>
+      </div>
+
+      <div className="border-t border-border pt-8">
+        <div className="text-center mb-6">
+          <h2 className="font-display text-2xl font-bold text-foreground mb-2">
+            What This Actually Adds Up To
+          </h2>
+          <p className="text-muted-foreground text-sm">
+            This isn't about looking modern. It's about the math.
+          </p>
+        </div>
+
+        <div className="space-y-3 mb-6">
+          {valueProps.map((prop) => (
+            <div key={prop.title} className="bg-card border border-border rounded-2xl p-4 flex gap-3">
+              <div
+                className={`flex-shrink-0 w-10 h-10 rounded-xl border flex items-center justify-center ${prop.color}`}
+              >
+                <prop.icon className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="font-display font-bold text-sm text-foreground mb-1">{prop.title}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{prop.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-2xl p-5 text-center">
+          <p className="text-sm text-foreground leading-relaxed mb-4">
+            For a flat monthly rate, I build these systems for your business and keep improving
+            them with you every week — not a one-time install and disappear. Most owners see it
+            pay for itself with the very first recovered lead.
+          </p>
+          <div className="flex gap-3">
+            <a
+              href={`tel:${site.phone}`}
+              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-xl py-3 text-sm transition-all active:scale-95"
+            >
+              Book Free Assessment
+            </a>
+            <a
+              href={`sms:${site.phone}`}
+              className="flex-1 bg-card border border-border hover:border-primary/50 text-foreground font-semibold rounded-xl py-3 text-sm transition-all active:scale-95"
+            >
+              Text Instead
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
