@@ -152,7 +152,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="bg-card border-2 border-red-900/50 rounded-2xl p-5 mb-6">
+        <div className="bg-card border-2 border-amber-800/40 rounded-2xl p-5 mb-6">
           <p className="font-display font-extrabold text-xl text-foreground text-center mb-1">
             Still thinking about hiring?
           </p>
@@ -164,7 +164,7 @@ export default function HomePage() {
             {employeeCosts.map((item) => (
               <div key={item.label} className="flex items-center justify-between text-sm">
                 <span className="flex items-center gap-2 text-muted-foreground">
-                  <X className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
+                  <X className="w-3.5 h-3.5 text-amber-500 flex-shrink-0" />
                   {item.label}
                 </span>
                 <span className="text-foreground font-medium">{item.value}</span>
@@ -173,7 +173,7 @@ export default function HomePage() {
           </div>
           <div className="flex items-center justify-between border-t border-border pt-3 mb-5">
             <span className="font-bold text-foreground">Real cost, before one job is booked</span>
-            <span className="font-extrabold text-red-400">~$4,000+/mo</span>
+            <span className="font-extrabold text-amber-500">~$4,000+/mo</span>
           </div>
 
           <div className="bg-primary/10 border border-primary/30 rounded-xl p-4">
