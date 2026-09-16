@@ -53,7 +53,7 @@ export const voicemailSamples: VoicemailSample[] = [
   },
 ];
 
-const fillerWords = /\b(um+|uh+|like,?|you know,?|so yeah,?|yeah so,?)\b/gi;
+const fillerWords = /\b(um+|uh+|like|you know|so yeah|yeah so)\b,?\s*/gi;
 
 const highUrgencyWords = [
   "asap",
@@ -112,7 +112,11 @@ function suggestedActionFor(urgency: Urgency): string {
 }
 
 function cleanSummary(text: string): string {
-  const cleaned = text.replace(fillerWords, "").replace(/\s{2,}/g, " ").trim();
+  const cleaned = text
+    .replace(fillerWords, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+,/g, ",")
+    .trim();
   return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
 }
 
