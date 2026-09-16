@@ -88,7 +88,8 @@ export default function HomePage() {
         <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-3 leading-[1.1]">
           <span className="block">Answer Every Call.</span>
           <span className="block">Book More Jobs.</span>
-          <span className="block text-primary">Get Your Life Back.</span>
+          <span className="block">Save More Time.</span>
+          <span className="block text-primary">Get More Freedom.</span>
         </h1>
         <p className="text-muted-foreground text-base leading-relaxed">
           From missed calls to quotes to reviews, I build the AI systems that run your business
