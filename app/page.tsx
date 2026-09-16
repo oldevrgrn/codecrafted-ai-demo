@@ -55,7 +55,7 @@ export default function HomePage() {
           Live AI Demos
         </div>
         <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 leading-tight">
-          See AI Save Your Business <span className="text-primary">10+ Hours</span> a Week
+          See AI Save Your Business <span className="text-primary">20+ Hours</span> a Week
         </h1>
         <p className="text-muted-foreground text-base">
           Live demos tailored for local Southern Utah businesses
