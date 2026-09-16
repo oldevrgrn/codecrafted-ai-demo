@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Zap, ArrowRight, Clock, DollarSign, TrendingUp, X, Check } from "lucide-react";
 import { site } from "@/lib/site";
+import { caseStudies } from "@/lib/caseStudies";
+import CaseStudyCard from "@/components/CaseStudyCard";
 
 const demos = [
   {
@@ -216,6 +218,26 @@ export default function HomePage() {
               Text Instead
             </a>
           </div>
+        </div>
+
+        <div className="mt-10">
+          <div className="text-center mb-6">
+            <h2 className="font-display text-2xl font-extrabold text-foreground mb-2">Case Studies</h2>
+            <p className="text-muted-foreground text-sm">Popular use-cases from our customers</p>
+          </div>
+
+          <div className="space-y-4 mb-5">
+            {caseStudies.slice(0, 4).map((study) => (
+              <CaseStudyCard key={study.slug} study={study} />
+            ))}
+          </div>
+
+          <Link
+            href="/case-studies"
+            className="block w-full text-center bg-card border border-border hover:border-primary/50 text-foreground font-semibold rounded-xl py-3.5 text-sm transition-all active:scale-95"
+          >
+            View All Case Studies
+          </Link>
         </div>
       </div>
     </div>
