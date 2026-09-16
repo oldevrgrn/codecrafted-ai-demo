@@ -84,12 +84,11 @@ export default function HomePage() {
           Done-With-You AI Automation · St. George, UT
         </div>
         <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 leading-tight">
-          See AI Save Your Business <span className="text-primary">20+ Hours</span> a Week
+          Every Missed Call Is a Lost Job. <span className="text-primary">Not Anymore.</span>
         </h1>
         <p className="text-muted-foreground text-base leading-relaxed">
-          I build AI systems that catch every call, quote every job, and follow up on every lead —
-          so nothing slips through the cracks. Built with you, one system at a time, right here in
-          St. George.
+          Catch every call, book more jobs, and get 20+ hours back every week — with AI systems
+          built and run for your business, right here in St. George.
         </p>
       </div>
 
