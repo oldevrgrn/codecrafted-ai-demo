@@ -83,7 +83,7 @@ export default function HomePage() {
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2.5 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-base sm:text-lg font-bold mb-4">
           <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-          Done-With-You AI Automation · St. George, UT
+          Done-With-You AI Automation
         </div>
         <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-3 leading-[1.1]">
           <span className="block">Answer Every Call.</span>

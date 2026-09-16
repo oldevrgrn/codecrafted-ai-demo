@@ -24,9 +24,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Automation Demo | St. George, UT",
+  title: "AI Automation Demo | Southern Utah",
   description:
-    "See AI save your business 20+ hours a week. Nate with Code Crafted builds these systems for St. George area businesses.",
+    "See AI save your business 20+ hours a week. Nate with Code Crafted builds these systems for Southern Utah businesses.",
 };
 
 export default function RootLayout({
