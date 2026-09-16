@@ -87,9 +87,9 @@ export default function HomePage() {
           See AI Save Your Business <span className="text-primary">20+ Hours</span> a Week
         </h1>
         <p className="text-muted-foreground text-base leading-relaxed">
-          Custom AI systems for Southern Utah trades, law, and service businesses — installed and
-          run with you, week after week. Stop losing leads to slow callbacks, buried quotes, and
-          unanswered reviews.
+          I build AI systems that catch every call, quote every job, and follow up on every lead —
+          so nothing slips through the cracks. Built with you, one system at a time, right here in
+          St. George.
         </p>
       </div>
 

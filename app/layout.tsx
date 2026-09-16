@@ -3,7 +3,7 @@ import { DM_Sans, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import StickyCTABar from "@/components/StickyCTABar";
 import ChatBubble from "@/components/ChatBubble";
-import ParallaxCanyon from "@/components/ParallaxCanyon";
+import StarryBackground from "@/components/StarryBackground";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark ${dmSans.variable} ${plusJakarta.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased">
-        <ParallaxCanyon />
+        <StarryBackground />
         <div className="relative z-10 min-h-screen pb-20">{children}</div>
         <ChatBubble />
         <StickyCTABar />
