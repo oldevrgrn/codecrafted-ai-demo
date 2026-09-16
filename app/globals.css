@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root.dark {
-  --background: 222 47% 7%;
-  --foreground: 210 25% 92%;
-  --card: 222 35% 12%;
-  --border: 217 28% 20%;
-  --primary: 217 91% 60%;
+  --background: 20 22% 7%;
+  --foreground: 30 20% 93%;
+  --card: 20 20% 12%;
+  --border: 20 16% 21%;
+  --primary: 14 78% 52%;
   --primary-foreground: 0 0% 100%;
-  --muted-foreground: 215 16% 62%;
+  --muted-foreground: 25 12% 63%;
 }
 
 html {

@@ -14,7 +14,7 @@ export default function StickyCTABar() {
         </a>
         <a
           href={`sms:${site.phone}`}
-          className="flex-1 flex items-center justify-center gap-2 bg-[hsl(160,84%,39%)] hover:bg-[hsl(160,84%,34%)] text-white font-semibold rounded-xl py-3.5 transition-all active:scale-95"
+          className="flex-1 flex items-center justify-center gap-2 bg-[hsl(150,28%,42%)] hover:bg-[hsl(150,28%,36%)] text-white font-semibold rounded-xl py-3.5 transition-all active:scale-95"
         >
           <MessageSquare className="w-5 h-5" />
           <span>Text Us</span>
