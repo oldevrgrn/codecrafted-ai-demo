@@ -83,8 +83,10 @@ export default function HomePage() {
           <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
           Done-With-You AI Automation · St. George, UT
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 leading-tight">
-          Answer Every Call. Book More Jobs. <span className="text-primary">Get Your Life Back.</span>
+        <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-3 leading-[1.1]">
+          <span className="block">Answer Every Call.</span>
+          <span className="block">Book More Jobs.</span>
+          <span className="block text-primary">Get Your Life Back.</span>
         </h1>
         <p className="text-muted-foreground text-base leading-relaxed">
           From missed calls to quotes to reviews, I build the AI systems that run your business
