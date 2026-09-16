@@ -4,21 +4,28 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Clock, DollarSign, RotateCcw, Copy, Check } from "lucide-react";
 import { sampleReviews, generateReviewResponse } from "@/lib/reviewData";
+import StarRating from "@/components/StarRating";
 
 export default function ReviewBotDemo() {
   const [selectedText, setSelectedText] = useState<string>("");
   const [customText, setCustomText] = useState("");
+  const [customRating, setCustomRating] = useState(3);
   const [status, setStatus] = useState<"form" | "generating" | "done">("form");
   const [response, setResponse] = useState("");
   const [copied, setCopied] = useState(false);
 
   const activeText = selectedText || customText;
+  const selectedPreset = sampleReviews.find((r) => r.text === selectedText);
 
   function handleDraft() {
     if (!activeText.trim()) return;
     setStatus("generating");
     setTimeout(() => {
-      setResponse(generateReviewResponse(activeText.trim()));
+      setResponse(
+        generateReviewResponse(activeText.trim(), {
+          rating: selectedPreset ? selectedPreset.rating : customRating,
+        })
+      );
       setStatus("done");
     }, 1100);
   }
@@ -26,6 +33,7 @@ export default function ReviewBotDemo() {
   function reset() {
     setSelectedText("");
     setCustomText("");
+    setCustomRating(3);
     setResponse("");
     setCopied(false);
     setStatus("form");
@@ -69,7 +77,10 @@ export default function ReviewBotDemo() {
                     selectedText === review.text ? "border-primary" : "border-border hover:border-primary/50"
                   }`}
                 >
-                  <p className="font-medium text-sm text-foreground mb-1">{review.name}</p>
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="font-medium text-sm text-foreground">{review.name}</p>
+                    <StarRating rating={review.rating} size={14} />
+                  </div>
                   <p className="text-xs text-muted-foreground leading-relaxed">{review.text}</p>
                 </button>
               ))}
@@ -78,6 +89,10 @@ export default function ReviewBotDemo() {
 
           <div>
             <label className="block text-sm font-medium text-foreground mb-2">or paste your own</label>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs text-muted-foreground">Star rating:</span>
+              <StarRating rating={customRating} onChange={setCustomRating} />
+            </div>
             <textarea
               value={customText}
               onChange={(e) => {
@@ -110,7 +125,10 @@ export default function ReviewBotDemo() {
         <>
           <div className="bg-card border border-border rounded-2xl p-5 mb-4">
             <div className="flex items-center justify-between mb-3">
-              <p className="text-primary font-bold text-sm">AI-DRAFTED RESPONSE</p>
+              <div className="flex items-center gap-2">
+                <p className="text-primary font-bold text-sm">AI-DRAFTED RESPONSE</p>
+                <StarRating rating={selectedPreset ? selectedPreset.rating : customRating} size={13} />
+              </div>
               <button
                 onClick={copyResponse}
                 className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"

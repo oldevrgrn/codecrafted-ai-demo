@@ -1,6 +1,7 @@
 export type SampleReview = {
   name: string;
   text: string;
+  rating: number;
   sentiment: "positive" | "neutral" | "negative";
   response: string;
 };
@@ -9,6 +10,7 @@ export const sampleReviews: SampleReview[] = [
   {
     name: "Jessica R.",
     text: "Amazing work! The team showed up on time, finished ahead of schedule, and left the place spotless. Will definitely use again!",
+    rating: 5,
     sentiment: "positive",
     response:
       "Thank you so much for the kind words, Jessica! We're thrilled the team was on time, efficient, and left everything spotless — that's exactly the experience we aim to deliver every time. We really appreciate you taking the time to share this, and we look forward to working with you again!",
@@ -16,6 +18,7 @@ export const sampleReviews: SampleReview[] = [
   {
     name: "David K.",
     text: "Work was fine but took longer than expected and communication could have been better. Might use again.",
+    rating: 3,
     sentiment: "neutral",
     response:
       "Thank you for the honest feedback, David. We're glad the work got done, but we're sorry the timeline and communication didn't meet your expectations — that's genuinely useful for us to hear. We're always working to tighten up our scheduling and updates, and we'd love the chance to show you a better experience next time.",
@@ -23,11 +26,18 @@ export const sampleReviews: SampleReview[] = [
   {
     name: "Robert M.",
     text: "Showed up 2 hours late, didn't finish the job, and still charged full price. Very disappointed.",
+    rating: 1,
     sentiment: "negative",
     response:
       "Thank you for sharing your feedback, and we're truly sorry to hear about your experience. We understand how frustrating it is when timing and expectations aren't met, and we apologize for the inconvenience caused. This is not the standard we aim to deliver, and we'd appreciate the opportunity to look into what happened and make this right. Please reach out to our team directly so we can review the details of your appointment and work toward a fair solution. We value the chance to improve and are committed to providing a better experience moving forward.",
   },
 ];
+
+export function classifySentimentFromRating(rating: number): "positive" | "neutral" | "negative" {
+  if (rating >= 4) return "positive";
+  if (rating === 3) return "neutral";
+  return "negative";
+}
 
 const negativeWords = [
   "late",
@@ -72,11 +82,15 @@ const genericResponses: Record<"positive" | "neutral" | "negative", string> = {
     "Thank you for sharing your feedback, and we're truly sorry to hear about your experience. This isn't the standard we aim to deliver, and we'd appreciate the opportunity to make this right. Please reach out to our team directly so we can look into what happened and find a fair resolution.",
 };
 
-export function generateReviewResponse(reviewText: string, matchedName?: string): string {
+export function generateReviewResponse(
+  reviewText: string,
+  options?: { matchedName?: string; rating?: number }
+): string {
   const preset = sampleReviews.find((r) => r.text === reviewText);
   if (preset) return preset.response;
 
-  const sentiment = classifySentiment(reviewText);
+  const sentiment =
+    options?.rating !== undefined ? classifySentimentFromRating(options.rating) : classifySentiment(reviewText);
   const base = genericResponses[sentiment];
-  return matchedName ? base.replace("Thank you", `Thank you, ${matchedName},`) : base;
+  return options?.matchedName ? base.replace("Thank you", `Thank you, ${options.matchedName},`) : base;
 }

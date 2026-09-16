@@ -23,6 +23,27 @@ const demos = [
     description: "AI drafts perfect Google review replies instantly.",
     gradient: "from-amber-600/20 to-amber-800/20",
   },
+  {
+    href: "/demos/note-scanner",
+    emoji: "📝",
+    title: "Sloppy Note → Clean Memo",
+    description: "Snap a photo of a handwritten job note. AI turns it into a filed-ready memo.",
+    gradient: "from-purple-600/20 to-purple-800/20",
+  },
+  {
+    href: "/demos/chat-widget",
+    emoji: "💬",
+    title: "Instant Website Chat",
+    description: "Ask your website a question. It answers instantly, day or night.",
+    gradient: "from-cyan-600/20 to-cyan-800/20",
+  },
+  {
+    href: "/demos/follow-up",
+    emoji: "🔁",
+    title: "Quote Follow-Up Sequence",
+    description: "Generate a 3-touch text sequence so cold quotes don't stay cold.",
+    gradient: "from-rose-600/20 to-rose-800/20",
+  },
 ];
 
 export default function HomePage() {
