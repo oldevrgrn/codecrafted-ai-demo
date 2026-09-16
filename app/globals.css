@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root.dark {
+  --background: 222 47% 7%;
+  --foreground: 210 25% 92%;
+  --card: 222 35% 12%;
+  --border: 217 28% 20%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 0 0% 100%;
+  --muted-foreground: 215 16% 62%;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+.text-balance {
+  text-wrap: balance;
+}
