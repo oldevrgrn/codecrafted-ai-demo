@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Zap, ArrowRight, Clock, DollarSign, TrendingUp } from "lucide-react";
+import { Zap, ArrowRight, Clock, DollarSign, TrendingUp, X, Check } from "lucide-react";
 import { site } from "@/lib/site";
 
 const demos = [
@@ -52,20 +52,27 @@ const valueProps = [
     icon: Clock,
     color: "text-blue-400 bg-blue-950/40 border-blue-900/40",
     title: "Time Reclaimed",
-    body: "10–20+ hours back in your week — no more late nights writing quotes, chasing voicemails, or answering the same three questions on the phone.",
+    body: "10–20+ hours back every week. No more late-night quotes or chasing voicemails.",
   },
   {
     icon: DollarSign,
     color: "text-emerald-400 bg-emerald-950/40 border-emerald-900/40",
     title: "Revenue Protected",
-    body: "A single HVAC replacement, roof, or legal case can run $3,000–$25,000+. The first business to respond usually wins the job — these systems make sure that's you.",
+    body: "Jobs run $3,000–$25,000+. Whoever responds first usually wins it — these systems make sure that's you.",
   },
   {
     icon: TrendingUp,
     color: "text-amber-400 bg-amber-950/40 border-amber-900/40",
     title: "Revenue Captured",
-    body: "Recovering just one lost lead or cold quote a month typically covers this entire service. Everything after that is pure upside — and it keeps compounding.",
+    body: "One recovered lead a month covers the whole service. Everything after that is pure profit.",
   },
+];
+
+const employeeCosts = [
+  { label: "Base wage (40 hrs/wk @ $20/hr)", value: "$3,460/mo" },
+  { label: "Payroll taxes (~10%)", value: "$350/mo" },
+  { label: "Workers' comp & insurance", value: "$120+/mo" },
+  { label: "Training, PTO, turnover risk", value: "Ongoing" },
 ];
 
 export default function HomePage() {
@@ -80,10 +87,9 @@ export default function HomePage() {
           See AI Save Your Business <span className="text-primary">20+ Hours</span> a Week
         </h1>
         <p className="text-muted-foreground text-base leading-relaxed">
-          {site.name} builds and manages custom AI systems for Southern Utah trades, law, and
-          service businesses — so you stop losing leads to slow callbacks, buried quotes, and
-          unanswered reviews. We set it up and run it with you, week after week, for a flat
-          monthly rate. No agency retainer, no dev team, no guesswork.
+          Custom AI systems for Southern Utah trades, law, and service businesses — installed and
+          run with you, week after week. Stop losing leads to slow callbacks, buried quotes, and
+          unanswered reviews.
         </p>
       </div>
 
@@ -144,11 +150,55 @@ export default function HomePage() {
           ))}
         </div>
 
+        <div className="bg-card border-2 border-red-900/50 rounded-2xl p-5 mb-6">
+          <p className="font-display font-extrabold text-xl text-foreground text-center mb-1">
+            Still thinking about hiring?
+          </p>
+          <p className="text-xs text-muted-foreground text-center mb-4 italic">
+            Example: a full-time office admin at $20/hr
+          </p>
+
+          <div className="space-y-2 mb-3">
+            {employeeCosts.map((item) => (
+              <div key={item.label} className="flex items-center justify-between text-sm">
+                <span className="flex items-center gap-2 text-muted-foreground">
+                  <X className="w-3.5 h-3.5 text-red-400 flex-shrink-0" />
+                  {item.label}
+                </span>
+                <span className="text-foreground font-medium">{item.value}</span>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between border-t border-border pt-3 mb-5">
+            <span className="font-bold text-foreground">Real cost, before one job is booked</span>
+            <span className="font-extrabold text-red-400">~$4,000+/mo</span>
+          </div>
+
+          <div className="bg-primary/10 border border-primary/30 rounded-xl p-4">
+            <p className="font-display font-extrabold text-lg text-primary text-center mb-2">
+              Hire an AI Agent Instead
+            </p>
+            <ul className="space-y-1.5 text-sm text-foreground">
+              <li className="flex items-center gap-2">
+                <Check className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                No payroll tax, no workers' comp, no sick days
+              </li>
+              <li className="flex items-center gap-2">
+                <Check className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                Works nights, weekends, and holidays — never quits
+              </li>
+              <li className="flex items-center gap-2">
+                <Check className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                <span className="font-bold">A fraction of that monthly cost</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-2xl p-5 text-center">
           <p className="text-sm text-foreground leading-relaxed mb-4">
-            For a flat monthly rate, I build these systems for your business and keep improving
-            them with you every week — not a one-time install and disappear. Most owners see it
-            pay for itself with the very first recovered lead.
+            Built and improved with you every week — not a one-time install. Most owners see it
+            pay for itself with the first recovered lead.
           </p>
           <div className="flex gap-3">
             <a
