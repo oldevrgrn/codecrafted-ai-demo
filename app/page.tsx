@@ -24,10 +24,10 @@ const demos = [
     gradient: "from-amber-600/20 to-amber-800/20",
   },
   {
-    href: "/demos/note-scanner",
-    emoji: "📝",
-    title: "Sloppy Note → Clean Memo",
-    description: "Snap a photo of a handwritten job note. AI turns it into a filed-ready memo.",
+    href: "/demos/dispatch-ticket",
+    emoji: "🎙️",
+    title: "Voicemail → Dispatch Ticket",
+    description: "A rambling voicemail becomes a clean, actionable dispatch ticket instantly.",
     gradient: "from-purple-600/20 to-purple-800/20",
   },
   {
