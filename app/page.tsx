@@ -78,32 +78,15 @@ const employeeCosts = [
 export default function HomePage() {
   return (
     <div className="max-w-lg mx-auto px-4 pt-8 pb-4">
-      <div className="relative text-center mb-8 pt-6 -mt-6">
-        <svg
-          viewBox="0 0 400 90"
-          preserveAspectRatio="none"
-          className="absolute inset-x-0 top-0 w-full h-20 opacity-25 pointer-events-none"
-        >
-          <defs>
-            <linearGradient id="mesaGradient" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="hsl(14,78%,48%)" />
-              <stop offset="100%" stopColor="hsl(14,60%,26%)" />
-            </linearGradient>
-          </defs>
-          <polygon
-            fill="url(#mesaGradient)"
-            points="0,90 0,58 35,50 55,60 85,34 110,52 145,44 165,58 200,28 230,50 260,40 290,56 320,38 355,54 400,42 400,90"
-          />
-        </svg>
-
-        <div className="relative inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-          <Zap className="w-4 h-4" />
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2.5 bg-primary/10 text-primary px-5 py-2.5 rounded-full text-base sm:text-lg font-bold mb-4">
+          <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
           Done-With-You AI Automation · St. George, UT
         </div>
-        <h1 className="relative font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 leading-tight">
+        <h1 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 leading-tight">
           See AI Save Your Business <span className="text-primary">20+ Hours</span> a Week
         </h1>
-        <p className="relative text-muted-foreground text-base leading-relaxed">
+        <p className="text-muted-foreground text-base leading-relaxed">
           Custom AI systems for Southern Utah trades, law, and service businesses — installed and
           run with you, week after week. Stop losing leads to slow callbacks, buried quotes, and
           unanswered reviews.
